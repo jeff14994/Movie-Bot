@@ -19,14 +19,20 @@ module.exports = app;
 
 app.post('/webhook',function(req, res){
     let data = req.body;
+    // MovieName should be the same as dialogflow
+    console.log(data);
     let queryMovieName = data.queryResult.parameters.MovieName;
+    // let queryMovieName = "abc";
+
     let propertiesObject = {
         query:queryMovieName,
         api_key:MOVIE_API_KEY,
         language:"zh-TW"
     };
+    console.log(propertiesObject);
+    console.log(queryMovieName);
     request({
-        uri:"http://api.themoviedb.org/3/search/movie?",
+        uri:"https://api.themoviedb.org/3/search/movie?",
         json:true,
         qs:propertiesObject
     },function(error, response, body){
