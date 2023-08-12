@@ -1,4 +1,5 @@
 # Move-Bot(Line Version)
+This project aims to develop a Line bot for seamless movie queries. 
 
 ## Demo
 
